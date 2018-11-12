@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <title>Public Records Response Rates</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/1.0.7/css/responsive.dataTables.min.css">        
+        <script
+            src="https://code.jquery.com/jquery-1.11.3.min.js">
+        </script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/1.0.7/js/dataTables.responsive.min.js"></script>
+        <script src="https://cdn.datatables.net/plug-ins/1.10.19/sorting/absolute.js"></script>
+        <style>
+                #table_id_wrapper {
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+
+                table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
+                    color: #FFF;
+                    font-weight:800;
+                    background-color:#00539b;
+                    border:none;
+                    font-size:14px;
+                }
+
+                .dataTables_length {
+                    font-size: 10px;
+                    padding: 5px;
+                }
+
+                #table_id_filter {
+                    font-size:12px;
+                    padding: 5px;
+                }
+                
+                .unknown {
+                    color: #d3d3d3;
+                }
+
+                table.dataTable thead th {
+                    font-size: 10px;
+                    padding: 5px 20px 5px 5px;
+                }
+
+                table.dataTable thead .sorting:hover {
+                    background-color:transparent!important;
+                    cursor:auto!important;
+                }
+    
+                .known {
+                    color: #000000;
+                }
+
+                table.dataTable tbody td {
+                    padding: 3px 5px;
+                }
+
+                a#table_id_previous.paginate_button.previous{
+                    padding: 5px;
+                    font-size: 12px;
+                    background-color:#00539b;
+                    color: #FFFFFF !important;
+                }
+
+                a#table_id_previous.paginate_button.previous:hover {
+                    background-color:#d3d3d3;
+                    color: #000;
+                }
+
+                input{
+                    color: #d3d3d3;
+                    content:"Search";
+                }
+
+                td.dataTables_empty {
+                    background-color: #FFFFFF;
+                    font-size:14px;
+                    padding:20px !important;
+                    margin:20px;
+                }  
+                
+                td.dataTables_empty:hover {
+                    cursor: auto !important; 
+                }
+
+                input:focus{
+                    color: #000;
+                }
+
+                a#table_id_next.paginate_button.next{
+                    padding: 5px;
+                    font-size: 12px;
+                    background-color:#00539b;
+                    color: #FFFFFF !important;
+                }
+
+                a#table_id_next.paginate_button.next:hover {
+                    background-color:#d3d3d3;
+                    color: #000;
+                }
+
+                .paginate_button {
+                    padding: 10px;
+                    font-size:8px;
+
+                }
+
+                dataTables_paginate paging_simple_numbers {
+                    font-size:10px;
+                }
+
+                .dataTables_info {
+                    font-size: 8px;
+                }
+
+                table.dataTable.display tbody tr.odd, table.dataTable.order-column.stripe tbody tr.odd {
+                    background-color: #f1f1f1;
+                }
+    
+                .value {
+                    font-size:12px;
+                }
+
+                aria-label {
+                    margin:5px'
+                }
+
+
+                tr:hover {
+                    background-color: #ddd;
+                }
+
+                value {
+                    background-color:none;
+                }
+    
+                div.container { max-width: 1200px }
+
+                table.dataTable.dtr-inline.collapsed>tbody>tr:hover {
+                    cursor: pointer;
+                    position:relative;
+                    padding-left: 30px;
+                    background-color: #eaeaea;
+                }
+
+                .child {
+                    font-size: 12px;
+                }
+
+                table.dataTable>tbody>tr.child ul li {
+                    padding: 3px 3px 3px 3px;
+                }
+
+                table.dataTable.no-footer {
+                    border-bottom:none;
+                }
+
+                #title {
+                    width:90%;
+
+                    font-family: Arial, Helvetica, sans-serif;
+                    padding-top:20px;
+                    padding-left:10px;
+                    padding-bottom:0px;
+                    margin-bottom:0px;
+
+                }
+
+                .compliant .known, .compliant .uknown {
+                    background-color:#e0fde0 !important;
+                }
+
+                #title h4 {
+                    font-size:14px;
+                    font-weight:normal; 
+                    margin-bottom:3px;   
+                    padding-bottom:5px;                 
+                }
+
+                #title h1 {
+                    font-size:16px;
+                  
+                }
+
+                #credit {
+                    font-size: 10px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    text-align:right;
+                }
+
+                #credit a{
+                    color:#000000;
+                }
+
+                @media only screen and (max-width: 600px) {
+                    #table_id_length {
+                        text-align:right;
+                    }
+                    #table_id_filter {
+                        text-align:left;
+                    }
+                    #title {
+                        font-family: Arial, Helvetica, sans-serif;
+                        padding-top:10px;
+                        padding-left:10px;
+                        padding-bottom:0px;
+                    }
+                    #title h4 {
+                        font-size:12px;
+                        font-weight:normal;
+                    }
+                    #title h1 {
+                        font-size:14px;
+                        margin-bottom:5px;
+                        
+                    }
+                    #credit {
+                        font-size:10px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        text-align:right;
+                    }
+
+                }
+
+                body {
+                    height:900px;
+                }
+            </style>     
+
+    </head>
+    <body>
+        <div id="title">
+            <h1>Georgia Agency Public Record Compliance</h1>
+            <h4>
+            By Georgia's Sunshine Laws, public agencies must present existing public 
+            records within three days of being requested. 
+            </h4>
+            </div>
+            <table id="table_id" class="display responsive dtr-inline hover" style="width:100%">
+                <thead>
+                  
+                <tr>
+                    <th>Agency</th>
+                    <th>Difference</th>
+                    <th>Days in 2016</th>
+                    <th>Days in 2018</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <p id="credit">
+            Source: <a href="https://georgianewslab.org/" target="_blank">Georgia News Lab</a>
+        </p>   
+        <script>
+            $(document).ready( function () {
+                var data;
+                var table;
+                $.ajax({
+                    type: "GET",  
+                    url: "data/data.csv",
+                    dataType: "text",       
+                    success: function(response) {
+                        data = $.csv.toArrays(response);
+                        //console.log(data);
+                        if (data.length) {
+                            makeTable(data);
+                            styleTable();
+
+                        }
+                        
+                    }   
+                });
+
+
+
+                var addItem = function(value) {
+                    var elem = ""
+                    for (var i = 0; i < value.length-1; i++) {
+                        if (!value[i]) {
+                            elem +="<td class='value unknown'>N/A</td>"
+                        } else {
+                            if (i == 1) {
+                                if (parseInt(value[i]) < 0)
+                                    elem+="<td class='value known'>"+value[i].replace('-','')+" days quicker</td>"
+                                else if (parseInt(value[i]) > 0) {
+                                    elem+="<td class='value known'>"+value[i]+" days slower</td>"
+                                } else if (parseInt(value[i]) == 0) {
+                                    elem+="<td class='value known'>Same</td>"
+                                } else {
+                                    elem+="<td class='value known'>"+value[i]+"</td>"
+                                }
+
+                            } else {
+                                elem+="<td class='value known'>"+value[i]+"</td>"
+                            }
+                            
+                        }
+
+                    } 
+                    return elem                    
+                };                
+
+                var makeTable = function(d) {
+                    var table_elem = $('#table_id tbody')
+                    
+
+                    console.log(d)
+                    for (var j = 1; j < d.length; j++) {
+                        //console.log(d[j])
+                        var inside = "";
+                        var row = ""; 
+                        if (j % 2 == 0) {
+                            inside=addItem(d[j]);
+                            if (parseInt(d[j][3]) <= 3) {
+                                row = "<tr class='even compliant'>" + inside + "</tr>"
+                            } else {
+                                row = "<tr class='even'>" + inside + "</tr>"
+
+                            }
+                        } else {
+                            inside=addItem(d[j]);
+                            if (parseInt(d[j][3]) <= 3) {
+                                row = "<tr class='odd compliant'>" + inside + "</tr>"
+                            } else {
+                                row = "<tr class='odd'>" + inside + "</tr>"
+
+                            }
+                        }
+                        
+                        table_elem.append(row)
+                    }
+                    
+                    
+
+
+
+                };
+
+                var unknownType = $.fn.dataTable.absoluteOrderNumber( {
+                    value: 'N/A', position: 'bottom'
+                } );
+                
+                var styleTable = function(){
+                    
+                    table = $('#table_id')
+                    table.DataTable( {
+                        "bLengthChange": false,
+                        "columns": [
+                            { "type": "string" },
+                            { "type": unknownType },
+                            { "type": unknownType },
+                            { "type": unknownType }
+                        ]
+                    });
+                };               
+
+
+            } );
+        </script>
+        <script type="text/javascript" src="//pym.nprapps.org/pym.v1.min.js"></script>
+
+        <script>
+            var pymChild = new pym.Child();
+        </script>        
+    </body>
+</html>
