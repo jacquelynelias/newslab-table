@@ -198,6 +198,17 @@
                     color:#000000;
                 }
 
+                #highlight {
+                    background-color:#e0fde0;
+                    font-size:8px;
+                    padding:3px;
+                }
+
+                #key {
+                    display:inline-block;
+                    flex:left;
+                }
+
                 @media only screen and (max-width: 600px) {
                     #table_id_length {
                         text-align:right;
@@ -236,20 +247,25 @@
     </head>
     <body>
         <div id="title">
-            <h1>Georgia Agency Public Record Compliance</h1>
+            <h1>Georgia Open Records Compliance</h1>
             <h4>
-            By Georgia's Sunshine Laws, public agencies must present existing public 
-            records within three days of being requested. 
+            In 2016, the Georgia News Lab class submitted public records requests to over 
+            a hundred local agencies. This year's class decided to see if anything 
+            has changed since then. The table below compares each agency's performance 
+            in 2018 to 2016.
             </h4>
+            </div>
+            <div id="key">
+                <div id="highlight">Highlighted</div>= Responded within 3 days
             </div>
             <table id="table_id" class="display responsive dtr-inline hover" style="width:100%">
                 <thead>
                   
                 <tr>
                     <th>Agency</th>
-                    <th>Difference</th>
-                    <th>Days in 2016</th>
-                    <th>Days in 2018</th>
+                    <th>Change from 2016 to 2018</th>
+                    <th>Days to respond in 2016</th>
+                    <th>Days to respond in 2018</th>
                 </tr>
             </thead>
             <tbody>
@@ -288,7 +304,7 @@
                         } else {
                             if (i == 1) {
                                 if (parseInt(value[i]) < 0)
-                                    elem+="<td class='value known'>"+value[i].replace('-','')+" days quicker</td>"
+                                    elem+="<td class='value known'>"+value[i].replace('-','')+" days faster</td>"
                                 else if (parseInt(value[i]) > 0) {
                                     elem+="<td class='value known'>"+value[i]+" days slower</td>"
                                 } else if (parseInt(value[i]) == 0) {
@@ -345,7 +361,62 @@
 
                 var unknownType = $.fn.dataTable.absoluteOrderNumber( {
                     value: 'N/A', position: 'bottom'
-                } );
+                 } );
+
+                jQuery.fn.dataTableExt.oSort['sort-name-asc'] = function(a,b) {
+                    var x = a.toLowerCase().replace(/^city of /, "");
+                    var y = b.toLowerCase().replace(/^city of /, "");
+                    return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+                };
+
+                jQuery.fn.dataTableExt.oSort['change-desc'] = function(a,b) {
+                    var x;
+                    var y;
+                    if(a.contains(/^days faster/)) {
+                        x = "-" + a.toLowerCase().replace(/^days faster/, "");
+                    }
+                    if(b.contains(/^days faster/)) {
+                        y = "-" + a.toLowerCase().replace(/^days faster/, "");
+                    }
+                    if (a.contains(/^days slower/)) {
+                        x = b.toLowerCase().replace(/^days slower/, "");
+                    }
+                    if (b.contains(/^days slower/)) {
+                        y = b.toLowerCase().replace(/^days slower/, "");
+                    }
+                    if (b.contains(/^Same/)) {
+                        y = b.toLowerCase().replace(/^same/, 0);
+                    }
+                    if (A.contains(/^Same/)) {
+                        x = a.toLowerCase().replace(/^same/, 0);
+                    }
+                return ((x < y) ? 1 : ((x === "N/A") ? -1 : ((y === "N/A") ? -1 :((x > y) ? -1 : 0))));
+                };
+
+                jQuery.fn.dataTableExt.oSort['change-asc'] = function(a,b) {
+                    var x;
+                    var y;
+                    if(a.contains(/^days faster/)) {
+                        console.log("fast")
+                        x = 0-parseInt(a.toLowerCase().replace(/^days faster/, ""));
+                    }
+                    if(b.contains(/^days faster/)) {
+                        y = 0-parseInt(a.toLowerCase().replace(/^days faster/, ""));
+                    }
+                    if (a.contains(/^days slower/)) {
+                        x = parseInt(b.toLowerCase().replace(/^days slower/, ""));
+                    }
+                    if (b.contains(/^days slower/)) {
+                        y = parseInt(b.toLowerCase().replace(/^days slower/, ""));
+                    }
+                    if (b.contains(/^Same/)) {
+                        y = b.toLowerCase().replace(/^same/, 0);
+                    }
+                    if (A.contains(/^Same/)) {
+                        x = a.toLowerCase().replace(/^same/, 0);
+                    }
+                    return ((x < y) ? -1 : ((x === "N/A") ? -1 : ((y === "N/A") ? -1 :((x > y) ? 1 : 0))));;
+                };
                 
                 var styleTable = function(){
                     
@@ -353,7 +424,7 @@
                     table.DataTable( {
                         "bLengthChange": false,
                         "columns": [
-                            { "type": "string" },
+                            { "type": "sort-name" },
                             { "type": unknownType },
                             { "type": unknownType },
                             { "type": unknownType }

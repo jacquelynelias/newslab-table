@@ -6,18 +6,18 @@ Alpharetta Police,3,1,4,UoF
 City of Atlanta,-49,54,5,Employees
 Atlanta Police,-44,50,6,UoF
 Atlanta Public Affairs,,Never,,
-City of Auburn,-3,4,1,Employees
+City of Auburn,-4,4,0,Employees
 Auburn Police,10,2,12,UoF
 City of Austell,,Never,22,Employees
 Austell Police,-51,52,1,UoF
 City of Avondale Estates,15,2,17,Employees
 Avondale Estates Police ,-11,12,1,UoF
 Berkeley Lake Marshal,,N/A,N/A,UoF
-City of Berkley Lake,0,1,1,Employees
+City of Berkley Lake,0,0,0,Employees
 City of Braselton,4,3,7,Employees
 Braselton Police,-3,5,2,UoF
 City of Brookhaven,0,2,2,Employees
-Brookhaven Police ,-5,6,1,UoF
+Brookhaven Police ,-6,6,0,UoF
 City of Buford,1,2,3,Employees
 Buford Department of Public Safety,,N/A,N/A,UoF
 City of Canton,-5,7,2,Employees
@@ -30,7 +30,7 @@ City of Chamblee,-13,21,8,Employees
 Chamblee Police,0,20,20,UoF
 City of Chattahoochee Hills,-4,6,2,Employees
 Chattahoochee Hills Police,-1,2,1,UoF
-Cherokee County Sheriff,0,1,1,UoF
+Cherokee County Sheriff,0,0,0,UoF
 Cherokee County ,0,1,1,Employees
 City of Clarkston,0,2,2,Employees
 Clarkston Police,-41,46,5,UoF
@@ -39,16 +39,16 @@ Clayton County Police,-9,26,17,UoF
 Clayton County Sheriff,0,3,3,UoF
 Cobb County,-3,4,1,Employees
 Cobb County Police,3,2,5,UoF
-Cobb County Sheriff,-53,54,1,UoF
-City of College Park,-1,1,,Employees
+Cobb County Sheriff,-54,54,0,UoF
+City of College Park,,0,,Employees
 College Park Police,17,1,18,UoF
 Coweta County,1,1,2,Employees
-Coweta County Sheriff,0,1,1,UoF
+Coweta County Sheriff,-1,1,0,UoF
 City of Cumming,-3,3,,Employees
 Cumming Police,0,1,1,UoF
 City of Dacula,9,2,11,Employees
-Dacula Marshal,3,1,4,UoF
-City of Dallas,5,1,6,Employees
+Dacula Marshal,4,0,4,UoF
+City of Dallas,6,0,6,Employees
 Dallas Police,0,1,1,UoF
 City of Decatur,,Never,17,Employees
 Decatur Police,-3,4,1,UoF
@@ -58,79 +58,79 @@ DeKalb County Sheriff,-51,54,3,UoF
 City of Doraville,0,4,4,Employees
 Doraville Police,6,3,9,UoF
 Douglas County Sheriff,2,1,3,UoF
-Douglas County ,0,1,1,Employees
+Douglas County ,-1,1,0,Employees
 City of Douglasville,1,2,3,Employees
 Douglasville Police,1,1,2,UoF
 City of Duluth,0,1,1,Employees
-Duluth Police,-1,1,,UoF
+Duluth Police,,1,,UoF
 City of Dunwoody,-1,2,1,Employees
 Dunwoody Police,-18,19,1,UoF
 City of East Point,4,11,15,Employees
 East Point Police,8,5,13,UoF
 City of Fairburn,-6,8,2,Employees
 Fairburn Police,-5,8,3,UoF
-Fayette County,-2,3,1,Employees
+Fayette County,-3,3,0,Employees
 Fayette County Sheriff,-1,1,0,UoF
 City of Fayetteville,7,1,8,Employees
 Fayetteville Police ,0,1,1,UoF
 City of Forest Park,4,3,7,Employees
-Forest Park Police,-8,9,1,UoF
+Forest Park Police,-9,9,0,UoF
 Forsyth County Sheriff,18,4,22,UoF
 Forsyth County,0,1,1,Employees
 Fulton County Payroll,,55,Pending,Employees
-Fulton County Police,0,1,1,UoF
+Fulton County Police,0,0,0,UoF
 Fulton County Sheriff,,20,Can't Find,UoF
-City of Grayson,-3,4,1,Employees
+City of Grayson,-4,4,0,Employees
 Gwinnett County,,3,Never,Employees
 Gwinnett Police,-8,9,1,UoF
 Gwinnett Sheriff,-17,20,3,UoF
 Hapeville Payroll,-25,28,3,Employees
 Hapeville Police,-48,51,3,UoF
 Henry County,0,2,2,Employees
-Henry County Police,0,1,1,UoF
-Henry County Sheriff,-2,3,1,UoF
+Henry County Police,0,0,0,UoF
+Henry County Sheriff,-3,3,0,UoF
 City of Johns Creek,-1,4,3,Employees
 Johns Creek Police,0,3,3,UoF
 City of Jonesboro,-52,62,10,Employees
 Jonesboro Police,2,2,4,UoF
 City of Kennesaw,-24,26,2,Employees
 Kennesaw Police,-14,19,5,UoF
-City of Lake City,0,1,1,Employees
-Lake City Police,0,1,1,UoF
+City of Lake City,0,0,0,Employees
+Lake City Police,-1,1,0,UoF
 City of Lawrenceville,-1,3,2,Employees
 Lawrenceville Police,-1,3,2,UoF
 City of Lilburn,,N/A,4,Employees
 Lilburn Police,-1,2,1,UoF
 City of Lithonia,,Never,,Employees
 Lithonia Police,,N/A,13,UoF
-City of Loganville,0,1,1,Employees
+City of Loganville,-1,1,0,Employees
 Loganville Police,-1,2,1,UoF
 City of Lovejoy,-3,9,6,Employees
-Lovejoy Police,-9,9,,UoF
+Lovejoy Police,,9,,UoF
 City of Marietta,1,1,2,Employees
 Marietta Police,1,6,7,UoF
 City of McDonough,-12,20,8,Employees
 McDonough Police,-4,15,11,UoF
 City of Milton,0,1,1,Employees
-Milton Police ,0,1,1,UoF
+Milton Police ,-1,1,0,UoF
 City of Morrow,,Never,1,Employees
-Morrow Police,-3,4,1,UoF
+Morrow Police,-4,4,0,UoF
 City of Mountain Park,4,1,5,Employees
-Mountain Park Police ,-5,6,1,UoF
-City of Newnan,0,1,1,Employees
-Newnan Police ,1,1,2,UoF
+Mountain Park Police ,-6,6,0,UoF
+City of Newnan,-1,1,0,Employees
+Newnan Police ,2,0,2,UoF
 City of Norcross,-1,20,19,Employees
 Norcross Police,-12,13,1,UoF
 City of Palmetto,-22,27,5,Employees
 Palmetto Police ,0,1,1,UoF
-Paulding County,-3,4,1,Employees
-Paulding County Sheriff,0,1,1,UoF
+Paulding County,-4,4,0,Employees
+Paulding County Sheriff,-1,1,0,UoF
 City of Peachtree Corners,10,1,11,Employees
 Pine Lake Police,-2,5,3,UoF
 City of Pine Lake,-2,3,1,Employees
 City of Powder Springs,20,5,25,Employees
 Powder Springs Police,20,5,25,UoF
-City of Rest Haven,-4,4,,
+City of Rest Haven,,4,,
 City of Riverdale,-6,6,,Employees
 Riverdale Police,1,2,3,UoF
 City of Roswell,1,1,2,Employees
@@ -141,11 +141,11 @@ City of Smyrna,3,1,4,Employees
 Smyrna Police,-2,3,1,UoF
 City of Snellville,0,1,1,Employees
 Snellville Police,-1,2,1,UoF
-South Fulton Police,5,,5,UoF
-City of South Fulton,0,,,Employees
+South Fulton Police,,,5,UoF
+City of South Fulton,,,,Employees
 City of Stone Mountain,-16,19,3,Employees
 Stone Mountain Police,-45,46,1,UoF
-City of Sugar Hill,1,1,2,Employees
+City of Sugar Hill,2,0,2,Employees
 City of Suwanee,0,1,1,Employees
 Suwanee Police,-1,2,1,UoF
 Union City,3,2,5,Employees
