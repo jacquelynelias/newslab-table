@@ -61,10 +61,17 @@
                     padding: 3px 5px;
                 }
 
+                #key-text {
+                    display:inline-block;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size:10px;
+
+                }
+
                 a#table_id_previous.paginate_button.previous{
                     padding: 5px;
                     font-size: 12px;
-                    background-color:#00539b;
+                    background-color:#0f5c0f;
                     color: #FFFFFF !important;
                 }
 
@@ -96,7 +103,7 @@
                 a#table_id_next.paginate_button.next{
                     padding: 5px;
                     font-size: 12px;
-                    background-color:#00539b;
+                    background-color:#0f5c0f;
                     color: #FFFFFF !important;
                 }
 
@@ -173,7 +180,7 @@
                 }
 
                 .compliant .known, .compliant .uknown {
-                    background-color:#e0fde0 !important;
+                    background-color:#d4f8d4 !important;
                 }
 
                 #title h4 {
@@ -199,14 +206,16 @@
                 }
 
                 #highlight {
-                    background-color:#e0fde0;
+                    background-color:#d4f8d4;
                     font-size:8px;
                     padding:3px;
+                    display:inline-block;
                 }
 
                 #key {
                     display:inline-block;
                     flex:left;
+                    margin-left:20px;
                 }
 
                 @media only screen and (max-width: 600px) {
@@ -256,7 +265,7 @@
             </h4>
             </div>
             <div id="key">
-                <div id="highlight">Highlighted</div>= Responded within 3 days
+                <div id="highlight">Highlighted</div><div id="key-text">= Responded within 3 days</div>
             </div>
             <table id="table_id" class="display responsive dtr-inline hover" style="width:100%">
                 <thead>
@@ -273,6 +282,7 @@
         </table>
         <p id="credit">
             Source: <a href="https://georgianewslab.org/" target="_blank">Georgia News Lab</a>
+            <br/>Created by Jacquelyn Elias 
         </p>   
         <script>
             $(document).ready( function () {
